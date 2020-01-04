@@ -10,29 +10,32 @@ Now, configure pom.xml
 The second step is to configure Spring Boot in pom.xml.
 
 All Spring Boot applications extend from spring-boot-starter-parent, so before defining our dependencies, define the parent starter as follows:
-
+<pre>
 <parent>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-parent</artifactId>
   <version>2.2.2.RELEASE</version>
 </parent>
+</pre>
 
 Since we're creating a REST API, we're going to use spring-boot-starter-web as a dependency which would implicitly define all the required dependencies.
 
 Add the below code in pom.xml as follows:
 
+<pre>
 <dependencies>
   <dependency>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-starter-web</artifactId>
   </dependency>
 </dependencies>
+</pre>
 
 This will load all the necessary dependencies(all jar files needed for running a Spring Application).
 
 Now create a main class CourseApiApp that will be run.
 / ************* CourseApiApp.java ************** /
-
+<pre>
 package in.aboutaakash.springbootstarter;
 
 import org.springframework.boot.SpringApplication;
@@ -45,13 +48,14 @@ public class CourseApiApp {
 		SpringApplication.run(CourseApiApp.class, args);
 	}
 }
+</pre>
 
 / ************* CourseApiApp.java Ends Here ************** /
 
 Now create a controller TopicController and create a method getAllTopics that fetches a list of topics from the database. But as of now, we'll fetch data manually and not from the database.
 
 / ************* TopicController.java ************** /
-
+<pre>
 package in.aboutaakash.springbootstarter.topic;
 
 import java.util.Arrays;
@@ -75,13 +79,14 @@ public class TopicController {
 	}
 
 }
+</pre>
 
 / ************* TopicController.java Ends Here ************** /
 
 Create another class in the same package Topic.java that will consists of getters and setters.
 
 / ************* Topic.java ************** /
-
+<pre>
 package in.aboutaakash.springbootstarter.topic;
 
 public class Topic {
@@ -121,8 +126,9 @@ public class Topic {
 	}
   
 }
+</pre>
 
 
 / ************* Topic.java Ends here ************** /
 
-<h1>Now we'll be creating 3 resources</h1>
+<h3>Now we'll be creating 3 resources</h3>
