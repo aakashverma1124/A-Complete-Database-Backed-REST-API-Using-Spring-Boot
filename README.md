@@ -211,6 +211,50 @@ In the similar way, we'll build all the requests that will be coming through /to
 / ************* TopicController.java ************** /
 
 <pre>
+package in.aboutaakash.springbootstarter.topic;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TopicController {
+	
+	@Autowired
+	private TopicService topicService;
+	
+	@RequestMapping("/topics")
+	public List<Topic> getAllTopics() {
+		
+		return topicService.getAllTopics();		
+	}
+	
+	@RequestMapping("/topics/{id}")
+	public Topic getTopic(@PathVariable String id) {
+		return topicService.getTopic(id);
+	}
+	
+	@RequestMapping(method=RequestMethod.POST, value="/topics") 
+	public void addTopic(@RequestBody Topic topic) {
+		topicService.addTopic(topic);
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/topics/{id}") 
+	public void updateTopic(@RequestBody Topic topic, @PathVariable String id) {
+		topicService.updateTopic(id, topic);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/topics/{id}") 
+	public void deleteTopic(@PathVariable String id) {
+		topicService.deleteTopic(id);
+	}
+}
 
 </pre>
 
@@ -219,6 +263,52 @@ In the similar way, we'll build all the requests that will be coming through /to
 / ************* TopicService.java ************** /
 
 <pre>
+package in.aboutaakash.springbootstarter.topic;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+
+@Service
+public class TopicService {
+
+	private List<Topic> topics = new ArrayList<>(Arrays.asList(
+			new Topic("spring", "Spring Framework", "Spring Framework Description"),
+			new Topic("laravel", "Laravel Framework", "Laravel Framework Description"),
+			new Topic("django", "Django Framework", "Django Framework Description")
+			));
+	
+	public List<Topic> getAllTopics() {
+		return topics;
+	}
+	
+	public Topic getTopic(String id) {
+		return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();		
+	}
+	
+	public void addTopic(Topic topic) {
+		topics.add(topic);
+	}
+	
+	public void updateTopic(String id, Topic topic) {
+		for (int i = 0; i < topics.size(); i++) {
+			Topic t = topics.get(i);
+			if(t.getId().equals(id)) {
+				topics.set(i, topic);
+				return;
+			}
+		}
+	}
+
+	public void deleteTopic(String id) {
+		topics.removeIf(t -> t.getId().equals(id));
+		
+	}
+}
+
 
 </pre>
 
