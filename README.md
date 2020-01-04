@@ -148,12 +148,12 @@ Now we'll be working on <b>Topics</b>
   <tr>
     <td>GET</td>
     <td>/topics</td>
-    <td>GET all topics</td>
+    <td>Get all the topics</td>
   </tr>
   <tr>
     <td>GET</td>
     <td>/topics/id</td>
-    <td>GETS the topic</td>
+    <td>Gets the topic</td>
   </tr>
   <tr>
     <td>POST</td>
@@ -163,12 +163,36 @@ Now we'll be working on <b>Topics</b>
   <tr>
     <td>PUT</td>
     <td>/topics/id</td>
-    <td>UPDATES the topic</td>
+    <td>Updates the topic</td>
   </tr>
   <tr>
     <td>DELETE</td>
     <td>/topics/id</td>
-    <td>DELETES the topic</td>
+    <td>Deletes the topic</td>
   </tr>
 </table>
-	
+
+Now create a Business Service. Business Service is nothing but a class with @Service annotation. These are used to write business logic in a different layer, separated from @RestController class file. 
+
+So, create a class TopicService with @Service annotation in <b>package in.aboutaakash.springbootstarter.topic;</b> package.
+
+Here we'll be using TopicService resource to get all the topics instead of what we were using earlier. We'll make an instance of TopicService in TopicController to get all the topics.
+In the similar way, we'll build all the requests that will be coming through /topics and the updated code will be:
+
+/ ************* TopicController.java ************** /
+
+<pre>
+
+</pre>
+
+/ ************* TopicController.java Ends here ************** /
+
+/ ************* TopicService.java ************** /
+
+<pre>
+
+</pre>
+
+/ ************* TopicService.java Ends here ************** /
+
+
