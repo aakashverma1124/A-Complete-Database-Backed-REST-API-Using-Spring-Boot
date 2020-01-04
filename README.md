@@ -129,3 +129,46 @@ public class Topic {
 / ************* Topic.java Ends here ************** /
 
 <h3>Now we'll be creating 3 resources</h3>
+<ul>
+<li>Topic</li>
+<li>Course</li>
+<li>Lesson</li>
+</ul>
+
+A Topic can have multiple Courses and a Course can consist of multiple Lessons.
+
+Now we'll be working on <b>Topics</b>
+<h3>Topics</h3>
+<table>
+  <tr>
+    <th>Type Of Request</th>
+    <th>URL</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/topics</td>
+    <td>GET all topics</td>
+  </tr>
+  <tr>
+    <td>GET</td>
+    <td>/topics/id</td>
+    <td>GETS the topic</td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/topics</td>
+    <td>GET all topics</td>
+  </tr>
+  <tr>
+    <td>PUT</td>
+    <td>/topics/id</td>
+    <td>UPDATES the topic</td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>/topics/id</td>
+    <td>DELETES the topic</td>
+  </tr>
+</table>
+	
