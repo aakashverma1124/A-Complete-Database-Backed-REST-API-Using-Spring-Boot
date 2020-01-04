@@ -158,7 +158,7 @@ Now we'll be working on <b>Topics</b>
   <tr>
     <td>POST</td>
     <td>/topics</td>
-    <td>GET all topics</td>
+    <td>Creates a new topic</td>
   </tr>
   <tr>
     <td>PUT</td>
