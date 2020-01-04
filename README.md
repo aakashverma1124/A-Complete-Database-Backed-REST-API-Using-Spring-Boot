@@ -11,11 +11,11 @@ The second step is to configure Spring Boot in pom.xml.
 
 All Spring Boot applications extend from spring-boot-starter-parent, so before defining our dependencies, define the parent starter as follows:
 <pre>
-<parent>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-parent</artifactId>
-  <version>2.2.2.RELEASE</version>
-</parent>
+	<parent>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-parent</artifactId>
+	  <version>2.2.2.RELEASE</version>
+	</parent>
 </pre>
 
 Since we're creating a REST API, we're going to use spring-boot-starter-web as a dependency which would implicitly define all the required dependencies.
@@ -23,12 +23,12 @@ Since we're creating a REST API, we're going to use spring-boot-starter-web as a
 Add the below code in pom.xml as follows:
 
 <pre>
-<dependencies>
-  <dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-web</artifactId>
-  </dependency>
-</dependencies>
+	<dependencies>
+	  <dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-web</artifactId>
+	  </dependency>
+	</dependencies>
 </pre>
 
 This will load all the necessary dependencies(all jar files needed for running a Spring Application).
