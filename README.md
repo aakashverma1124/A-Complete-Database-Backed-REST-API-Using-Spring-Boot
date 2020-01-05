@@ -314,6 +314,6 @@ public class TopicService {
 
 / ************* TopicService.java Ends here ************** /
 
-We can now use these functionalities using Postman.
+We can now use these functionalities using Postman. Postman is currently one of the most popular tools used in API testing.
 
 
