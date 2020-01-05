@@ -314,4 +314,6 @@ public class TopicService {
 
 / ************* TopicService.java Ends here ************** /
 
+We can now use these functionalities using Postman.
+
 
